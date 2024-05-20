@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Log List</title>
+</head>
+<body>
+    <h1>Log List</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>IP Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in parsed_data %}
+                <tr>
+                    <td><a href="{{ url_for('show_detail', ip=entry.ip) }}">{{ entry.ip }}</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
